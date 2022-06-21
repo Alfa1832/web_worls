@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/navigation/country.dart';
+import 'package:untitled/navigation/educat.dart';
+import 'package:untitled/navigation/info.dart';
+import 'package:untitled/navigation/setting.dart';
+import 'package:untitled/navigation/user.dart';
+import 'package:untitled/portfilio.dart';
 
 
 class Appdrawer extends StatelessWidget {
@@ -33,27 +39,50 @@ class Appdrawer extends StatelessWidget {
              ),
 
            ]),
-         ),const ListTile(
+         ), ListTile(
+
            leading: Icon(Icons.person),
            title: Text("Users"),
            trailing: Icon(Icons.remove_red_eye_sharp),
+           onTap: (){
+             Navigator.of(context).push(MaterialPageRoute(builder: (context)=> user()));
+           },
          ),
-         const ListTile(
+         ListTile(
            leading: Icon(Icons.flag),
            title: Text("Countries"),
+           onTap: (){
+             Navigator.of(context).push(MaterialPageRoute(builder: (context)=> country()));
+           },
          ),
-         const ListTile(
+         ListTile(
            leading: Icon(Icons.school),
            title: Text("Education"),
+           onTap: (){
+             Navigator.of(context).push(MaterialPageRoute(builder: (context)=> educate()));
+           },
          ),
-         const ListTile(
+         ListTile(
            leading: Icon(Icons.settings),
            title: Text("Settings"),
+           onTap: (){
+             Navigator.of(context).push(MaterialPageRoute(builder: (context)=> setting()));
+           },
           ),
-         const ListTile(
+         ListTile(
            leading: Icon(Icons.info),
            title: Text("About Us..."),
-         )
+           onTap: (){
+             Navigator.of(context).push(MaterialPageRoute(builder: (context)=> info()));
+           },
+         ),
+         ListTile(
+           leading: Icon(Icons.task),
+           title: Text("test"),
+           onTap: (){
+             Navigator.of(context).push(MaterialPageRoute(builder: (context)=>portfolio()));
+           },
+         ),
        ],),
     );
   }

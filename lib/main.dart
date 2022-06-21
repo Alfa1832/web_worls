@@ -1,7 +1,14 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:untitled/navigation/country.dart';
+import 'package:untitled/pages/banks.dart';
+import 'package:untitled/pages/hospitals.dart';
+import 'package:untitled/pages/metro.dart';
+import 'package:untitled/pages/starbucks.dart';
+import 'package:untitled/pages/univercity.dart';
 import 'drawar.dart';
+
 
 void main(){
   runApp(MaterialApp(
@@ -16,6 +23,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
          title: const Text("Home"),
 
@@ -29,84 +37,106 @@ class Home extends StatelessWidget {
             child: ListView(
 
               children: [
-                Card(
+                Padding( padding: EdgeInsets.fromLTRB(0, 2, 0, 0), child: country()),
 
-                child:Column(
-              children: [
-                Image.asset("assets/london.jpg",),
-                const Text('London')
-              ],
 
-                ),
-            ),
                 const SizedBox(height: 20),
 
-                Card(
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>caffe()));
+                  },
+                  child: Card(
+
+                      child: Row(
+
+                        children: [
+
+                          Image.asset("assets/starbucks.jpg",height: 100,width: 150,fit: BoxFit.fill,),
+                         const SizedBox(width: 20,),const Text("Star Bucks",),
+
+                        ],
+                      ),
+                    ),
+                ),
+                const SizedBox(height: 20),
+
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>metro()));
+
+                  },
+                  child: Card(
 
                     child: Row(
 
                       children: [
 
-                        Image.asset("assets/starbucks.jpg",height: 100,width: 150,fit: BoxFit.fill,),
-                       const SizedBox(width: 20,),const Text("Star Bucks")
+                        Image.asset("assets/metro.jpg",height: 100,width: 150,fit: BoxFit.fill,),
+                        const SizedBox(width: 20,),const Text("Metro")
 
                       ],
                     ),
                   ),
+                ),
                 const SizedBox(height: 20),
 
-                Card(
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>univercity()));
 
-                  child: Row(
+                  },
+                  child: Card(
 
-                    children: [
+                    child: Row(
 
-                      Image.asset("assets/metro.jpg",height: 100,width: 150,fit: BoxFit.fill,),
-                      const SizedBox(width: 20,),const Text("Metro")
+                      children: [
 
-                    ],
+                        Image.asset("assets/univercities.jpg",height: 100,width: 150,fit: BoxFit.fill,),
+                        const SizedBox(width: 20,),const Text("Univercities")
+
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
 
-                Card(
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>banks()));
 
-                  child: Row(
+                  },
+                  child: Card(
 
-                    children: [
+                    child: Row(
 
-                      Image.asset("assets/univercities.jpg",height: 100,width: 150,fit: BoxFit.fill,),
-                      const SizedBox(width: 20,),const Text("Univercities")
+                      children: [
 
-                    ],
+                        Image.asset("assets/banks.jpg",height: 100,width: 150,fit: BoxFit.fill,),
+                        const SizedBox(width: 20,),const Text("Banks")
+
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
 
-                Card(
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>hospital()));
 
-                  child: Row(
+                  },
+                  child: Card(
 
-                    children: [
+                    child: Row(
 
-                      Image.asset("assets/banks.jpg",height: 100,width: 150,fit: BoxFit.fill,),
-                      const SizedBox(width: 20,),const Text("Banks")
+                      children: [
 
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 20),
+                        Image.asset("assets/hospital.jpg",height: 100,width: 150,fit: BoxFit.fill,),
+                        const SizedBox(width: 20,),const Text("Hospitals")
 
-                Card(
-
-                  child: Row(
-
-                    children: [
-
-                      Image.asset("assets/hospital.jpg",height: 100,width: 150,fit: BoxFit.fill,),
-                      const SizedBox(width: 20,),const Text("Hospitals")
-
-                    ],
+                      ],
+                    ),
                   ),
                 ),
 
@@ -118,6 +148,7 @@ class Home extends StatelessWidget {
         ),
       ),
       drawer:const Appdrawer(),
+      floatingActionButton: FloatingActionButton(onPressed: (){},child: Icon(Icons.refresh)),
     );
 
   }
