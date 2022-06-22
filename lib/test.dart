@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
 
-class portfolio extends StatelessWidget {
-  const portfolio({Key? key}) : super(key: key);
+class tab extends StatelessWidget {
+  const tab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: Theme.of(context).copyWith(
-        scaffoldBackgroundColor: Colors.white,
-      ),
+    return DefaultTabController(
+      length: 5,
       child: Scaffold(
-
-            body:ListView(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Text("All Projects",),
+              Text("Websites"),
+              Text("Android"),
+              Text("Graphics"),
+              Text("Training"),
+            ],
+          ),
+          title: Text('Tabs Demo'),
+        ),
+        body: TabBarView(
+          children: [
+            ListView(
 
               children: [
 
@@ -667,16 +678,18 @@ class portfolio extends StatelessWidget {
 
 
               ],
-            ),
-          ),
+            ), 
+            Icon(Icons.directions_transit, size: 350),
+            Icon(Icons.directions_car, size: 350),
+            Icon(Icons.directions_transit, size: 350),
+            Icon(Icons.directions_car, size: 350),
 
 
-
-
-
-
-
-
+          ],
+        ),
+      ),
     );
   }
+
+
 }

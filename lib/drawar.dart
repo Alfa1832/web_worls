@@ -5,6 +5,7 @@ import 'package:untitled/navigation/info.dart';
 import 'package:untitled/navigation/setting.dart';
 import 'package:untitled/navigation/user.dart';
 import 'package:untitled/portfilio.dart';
+import 'package:untitled/test.dart';
 
 
 class Appdrawer extends StatelessWidget {
@@ -76,11 +77,20 @@ class Appdrawer extends StatelessWidget {
              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> info()));
            },
          ),
+
          ListTile(
            leading: Icon(Icons.task),
            title: Text("test"),
            onTap: (){
              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>portfolio()));
+           },
+         ),
+
+         ListTile(
+           leading: Icon(Icons.task),
+           title: Text("test"),
+           onTap: (){
+             Navigator.of(context).push(MaterialPageRoute(builder: (context)=>tab()));
            },
          ),
        ],),
