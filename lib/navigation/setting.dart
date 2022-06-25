@@ -6,7 +6,7 @@ class setting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child:Text("Settings...")),
+      body: Center(child:Image.asset('assets/line-unscreen.gif',width: 150,)),
     );
   }
 }

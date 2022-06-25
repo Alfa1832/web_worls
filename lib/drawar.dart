@@ -74,7 +74,7 @@ class Appdrawer extends StatelessWidget {
            leading: Icon(Icons.info),
            title: Text("About Us..."),
            onTap: (){
-             Navigator.of(context).push(MaterialPageRoute(builder: (context)=> info()));
+             Navigator.of(context).push(MaterialPageRoute(builder: (context)=> about()));
            },
          ),
 
